@@ -10,7 +10,19 @@
     <script type="text/babel">
       const appEl = document.querySelector("#app");
       const root = ReactDOM.createRoot(appEl);
-      root.render(<h1>こんにちは</h1>);
+      // コンポーネント名は先頭は必ず大文字！（babelが先頭大文字でないとJSXだと認識しないため）
+      // function Example() {
+      //    return <h1>こんにちは</h1>;
+      // }
+      const Example = () => {
+        // コンポーネントのrJSXが二行以上になる時は（）で囲む。
+        return (
+          <div>
+            <h1>こんにちは</h1>
+          </div>
+        );
+      };
+      root.render(<Example />);
     </script>
   </body>
 </html>
